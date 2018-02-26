@@ -2,7 +2,7 @@
 <html{{ with .Site.Params.Prefix }} prefix="{{ range . }}{{ . }} {{ end }}"{{ end }}{{ if .IsHome }} class="home"{{ end }}>
 {{ partial "head.html" . }}
 	<body>
-		<header>
+		<div id="top">
 {{ partial "header.html" . }}
 {{ if .Site.Params.navigationinheader }}
 		<nav>
@@ -10,7 +10,7 @@
 {{ partial "nav-local.html" . }}
 		</nav>
 {{ end }}
-		</header>
+		</div>
 {{ if .Site.Params.navigationinheader }}
 {{ else }}
 		<nav>
@@ -19,9 +19,9 @@
 		</nav>
 {{ end }}
 {{ block "main" . }}{{ end }}
-		<footer>
+		<div id="bottom">
 {{ partial "footer.html" . }}
-		</footer>
+		</div>
 {{ partial "foot.html" . }}
 	</body>
 </html>

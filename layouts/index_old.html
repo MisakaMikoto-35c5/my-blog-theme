@@ -8,12 +8,10 @@
 		{{ end }}
 	</div>
 </div>
-<div id="content" class="list">
-	<div class="content">
-{{ range (where .Paginator.Pages "Date" "<=" now) }}
-{{ partial "article" (dict "article" . "mode" (default "summary" $.Site.Params.listmode)) }}
+<div class="list">
+{{ range (where (where .Paginator.Pages "Section" .Site.Params.frontpagesection) "Date" "<=" now) }}
+{{ partial "article" (dict "article" . "mode" (default "summary" (default $.Site.Params.listmode $.Site.Params.frontpagemode))) }}
 {{ end }}
 {{ partial "pagination" . }}
-	</div>
 </div>
 {{ end }}

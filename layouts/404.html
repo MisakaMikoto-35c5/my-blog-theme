@@ -1,0 +1,20 @@
+{{ define "main" }}
+<div id="banner">
+	<div class="content top_bg">
+		{{ if .Site.Params.logotype }}
+		<img src="{{ .Site.BaseURL }}{{ .Site.Params.logotype }}" />
+		{{ else }}
+		{{ .Site.Title }}
+		{{ end }}
+	</div>
+</div>
+<div id="content" class="list">
+	<div class="content">
+        <h1>404 Not Found</h1>
+        <h2>这是什么？</h2>
+        <p>这代表您请求的网页可能不存在，或是被移动至其他 URL，或是被永久删除。</p>
+        <h2>如何修复它？</h2>
+        <p>请检查您输入的 URL 是否正确。</p>
+	</div>
+</div>
+{{ end }}
