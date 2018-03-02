@@ -9,7 +9,12 @@
 	</div>
 </div>
 <div class="list">
-{{ range $index }}
+{{ range .Data.Pages }}
+	{{ if eq .Type "posts" }}
+	<div class="content">
+	{{ partial "article" (dict "article" . "mode" (default "summary" $.Site.Params.listmode)) }}
+	</div>
+	{{ end }}
 {{ end }}
 </div>
 {{ end }}
