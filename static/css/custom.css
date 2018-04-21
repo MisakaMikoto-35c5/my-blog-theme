@@ -52,6 +52,8 @@ h3 { font-size: 1.4em; }
 h4 { font-size: 1.3em; }
 h5 { font-size: 1.2em; }
 h6 { font-size: 1.1em; }
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before { content: "🌚 "; }
+h1:hover:before, h2:hover:before, h3:hover:before, h4:hover:before, h5:hover:before, h6:hover:before { content: "🌝 "; }
 ul {
 	padding-left: 1.2em;
 }
@@ -59,9 +61,17 @@ ul {
 	padding: 0;
 	display: block;
 }
+li ul {
+	display: block;
+	margin: 0 0 0.5em 1em;
+}
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+ul li { display: block; }
 li:before { content: "🌚"; display: inline-block; width: 1.6em; }
 li:hover:before { content: "🌝"; }
-li { display: inline-block; }
 
 
 @media screen and (max-device-width: 768px) {
