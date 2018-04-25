@@ -1,9 +1,17 @@
+
+{{ if eq .Params.format "html" }}
 <div>
-	{{ if eq .Params.format "html" }}
-		{{ .RawContent | safeHTML }}
-	{{ else if eq .Params.format "plain" }}
-		{{ .RawContent | htmlEscape }}
-	{{ else }}
-		{{ .Content }}
-	{{ end}}
+	{{ .RawContent | safeHTML }}
 </div>
+{{ else if eq .Params.format "plain" }}
+<div>
+	{{ .RawContent | htmlEscape }}
+</div>
+{{ else }}
+<div>
+	{{ .Content }}
+</div>
+<div id="disqus-comment">
+	{{ partial "custom/disqus.html" . }}
+</div>
+{{ end}}
