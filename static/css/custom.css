@@ -1,4 +1,8 @@
 body {
+	font-family: "San Francisco", Arial, Tahoma,
+		"Noto Sans", "Noto Sans CJK SC", "Source Han Sans CN",
+		"PingFang SC", STHeiti, "Microsoft Yahei",
+		sans-serif;
 	margin: 0;
 }
 .content {
@@ -76,6 +80,10 @@ li:hover:before { content: "🌝"; }
 pre {
 	width: 100%;
 	overflow-x: auto;
+}
+
+code {
+	font-family: "SFMono-Regular","Consolas","Liberation Mono","Menlo",Courier,monospace;
 }
 
 @media screen and (max-device-width: 768px) {
