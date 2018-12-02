@@ -73,6 +73,10 @@ ul li { display: block; }
 li:before { content: "🌚"; display: inline-block; width: 1.6em; }
 li:hover:before { content: "🌝"; }
 
+pre {
+	width: 100%;
+	overflow-x: auto;
+}
 
 @media screen and (max-device-width: 768px) {
 	.content {
