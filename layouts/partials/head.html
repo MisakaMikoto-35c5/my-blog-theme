@@ -4,10 +4,13 @@
 {{ partial "title.html" . }}
 <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
 <link rel="shortcut icon" href="{{ .Site.BaseURL }}favicon.ico">
-<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon-192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="{{ .Site.BaseURL }}favicon.png">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ .Site.BaseURL }}favicon-180.png">
 <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
 {{ range .Site.Params.css }}
 <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}"/>{{ end }}
 {{ partial "head-local.html" . }}
 {{ partial "custom/google-analytics.html" . }}
+<!-- Bad browser malware alert -->
+<script src="/malware-alert/Browser.js"></script>
+<script src="/malware-alert/check-browser.js"></script>
