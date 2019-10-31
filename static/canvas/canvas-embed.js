@@ -66,11 +66,11 @@
     }
 
     function sumbitFingerprint() {
-        var canvas = getCanvasContext();
+        var canvas = getCanvasContext('webgl');
 
         var vendor = null;
         var renderer = null;
-        if (canvas != null) {
+        if (canvas != null && canvas.context.getExtension != null) {
             var debugInfo = canvas.context.getExtension('WEBGL_debug_renderer_info');
             vendor = canvas.context.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
             renderer = canvas.context.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
