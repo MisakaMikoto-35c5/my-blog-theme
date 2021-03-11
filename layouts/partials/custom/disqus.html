@@ -1,20 +1,16 @@
+<div id="disqus_notice">
+    <button id="showDisqusButton" style="font-size: 1rem;">点击这里添加或显示评论</button>
+    <br>
+    <label style="font-size: .8rem;">请注意：评论服务由 Disqus 提供。Disqus 可能会收集您的个人资料并向您推送广告，具体可参见 Disqus 的隐私政策。这个行为不是这里能控制的。如果您不希望被收集资料，请您不要点按上面的按钮。</label>
+</div>
 <div id="disqus_thread"></div>
 <script>
-
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
+document.getElementById('showDisqusButton').onclick = function() {
 var d = document, s = d.createElement('script');
 s.src = 'https://blog-vmts7dv4kz.disqus.com/embed.js';
 s.setAttribute('data-timestamp', +new Date());
 (d.head || d.body).appendChild(s);
-})();
+document.getElementById('disqus_notice').innerHTML = '';
+}
 </script>
 <noscript><em>请启用 Javascript 以显示 <a href="https://disqus.com/?ref_noscript">由 Disqus 提供的评论服务</a>。</em></noscript>

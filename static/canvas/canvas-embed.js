@@ -70,10 +70,14 @@
 
         var vendor = null;
         var renderer = null;
-        if (canvas != null && canvas.context.getExtension != null) {
-            var debugInfo = canvas.context.getExtension('WEBGL_debug_renderer_info');
-            vendor = canvas.context.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
-            renderer = canvas.context.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+        if (canvas != null && canvas.context.getExtension != null && canvas.context.getParameter != null) {
+            try {
+                var debugInfo = canvas.context.getExtension('WEBGL_debug_renderer_info');
+                vendor = canvas.context.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+                renderer = canvas.context.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+            } catch (e) {
+                console.error(e);
+            }
         }
 
         getCanvasFingerprint().then(function(val) {

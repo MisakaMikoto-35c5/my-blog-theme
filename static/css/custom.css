@@ -12,6 +12,11 @@ body {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+#content-area img {
+	object-fit: contain;
+	max-height: 200px;
+	width: 100%;
+}
 #top .content ul li, #top .content ul, #top_logo {
 	padding: 10px;
 	margin: 0px;
