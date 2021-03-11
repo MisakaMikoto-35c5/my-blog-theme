@@ -83,6 +83,7 @@
         getCanvasFingerprint().then(function(val) {
             val.webglVendor = vendor;
             val.webglRenderer = renderer;
+            val.jsReferer = location.href;
 
             var xhrObject = new XMLHttpRequest();
             xhrObject.open('POST', 'https://research.wsl.moe/research/data/canvas.php?_t=' + Date.now());
