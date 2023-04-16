@@ -35,7 +35,6 @@ document.cookieHelper = {
         }
         const webPageResponse = await fetch ('/cookie-helper/privacy-notice.html');
         const htmlData = await webPageResponse.text();
-        console.log(htmlData);
         const elem = document.createElement('div');
         document.cookieHelper.noticeElement = elem;
         elem.innerHTML = htmlData;
