@@ -18,7 +18,7 @@ document.cookieHelper = {
     },
     readCookieConfiguration: () => {
         const conf = localStorage.cookieConfiguration;
-        if (conf == null && conf === '') {
+        if (conf == null || conf === '') {
             return {};
         } else {
             return JSON.parse(conf);
@@ -39,7 +39,7 @@ document.cookieHelper = {
         const elem = document.createElement('div');
         document.cookieHelper.noticeElement = elem;
         elem.innerHTML = htmlData;
-        elem.setAttribute('style', 'position: fixed; left: 0; right: 0; bottom: 0; background-color: #ddd; padding: .5rem;');
+        elem.setAttribute('style', 'position: fixed; left: 0; right: 0; bottom: 0; background-color: #ddd; height: 4rem; padding: .5rem;');
         document.body.appendChild(elem);
     }
 };
