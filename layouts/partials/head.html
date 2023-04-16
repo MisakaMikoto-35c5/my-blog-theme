@@ -11,4 +11,5 @@
 {{ range .Site.Params.css }}
 <link rel="stylesheet" href="{{ $.Site.BaseURL }}{{ . }}"/>{{ end }}
 {{ partial "head-local.html" . }}
+<script async src="/cookie-helper/cookie-helper.js"></script>
 {{ partial "custom/google-analytics.html" . }}

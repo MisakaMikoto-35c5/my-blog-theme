@@ -1,4 +1,6 @@
 document.cookieHelper = {
+    acceptAllTemplate: {'analytics': '1', 'disqus': '1'},
+    denyAllTemplate: {'analytics': '0', 'disqus': '0'},
     changeCookieSettings: (settings) => {
         const origCookieConf = document.cookieHelper.readCookieConfiguration();
 
@@ -27,14 +29,17 @@ document.cookieHelper = {
             console.error('Brower too old');
             return;
         }
-        if (conf != null || conf !== '') {
+        const conf = localStorage.cookieConfiguration;
+        if (conf != null && conf !== '') {
             return;
         }
         const webPageResponse = await fetch ('/cookie-helper/privacy-notice.html');
         const htmlData = await webPageResponse.text();
+        console.log(htmlData);
         const elem = document.createElement('div');
         document.cookieHelper.noticeElement = elem;
         elem.innerHTML = htmlData;
+        elem.setAttribute('style', 'position: fixed; left: 0; right: 0; bottom: 0; background-color: #ddd; padding: .5rem;');
         document.body.appendChild(elem);
     }
 };
