@@ -14,7 +14,7 @@ document.cookieHelper = {
         }
     },
     checkFeactureEnabled: (feature) => {
-        return readCookieConfiguration()[feature] !== '0';
+        return document.cookieHelper.readCookieConfiguration()[feature] !== '0';
     },
     readCookieConfiguration: () => {
         const conf = localStorage.cookieConfiguration;
