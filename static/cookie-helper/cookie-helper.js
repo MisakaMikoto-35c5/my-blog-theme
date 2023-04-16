@@ -44,7 +44,7 @@ document.cookieHelper = {
     }
 };
 
-document.addEventListener("DOMContentLoaded", function(event) {
+window.addEventListener("load", function(event) {
     document.cookieHelper.onPageLoad();
 });
  
