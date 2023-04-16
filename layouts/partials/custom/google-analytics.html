@@ -1,6 +1,14 @@
 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-5Y1VMFJ6TE"></script>
 <script>
+  
+  if (document.cookieHelper.checkFeactureEnabled('analytics')) {
+    (function() {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://www.googletagmanager.com/gtag/js?id=G-5Y1VMFJ6TE';
+      s.setAttribute('async', '1');
+      (d.head || d.body).appendChild(s);
+    })();
+  }
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());

@@ -1,0 +1,18 @@
+<div style="position: absolute; left: 0; bottom: 0; display: flex; flex-direction: row;">
+    <div>
+        <div>
+            Cookie 使用提示
+        </div>
+        <div>
+            网站使用了一些第三方库以提供一些功能，
+            这些第三方库需要使用 Cookie 技术以改善您的浏览体验，
+            您可以选择接受或拒绝这些 Cookies。
+            如果您选择拒绝，您仍然可以正常浏览，但网站的功能可能会受限，
+            您稍后在需要时仍可以重新启用这些功能。
+        </div>
+    </div>
+    <div>
+        <button onclick="document.cookieHelper.changeCookieSettings({'analytics': '1', 'disqus': '1'})">全部同意</button>
+        <button onclick="document.cookieHelper.changeCookieSettings({'analytics': '0', 'disqus': '0'})">全部拒绝</button>
+    </div>
+</div>
